@@ -70,7 +70,7 @@ const Testimonials: FC = memo(() => {
   }
 
   return (
-    <Section noPadding sectionId={SectionId.Testimonials}>
+    <Section noPadding sectionId={SectionId.News}>
       <div
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
@@ -87,7 +87,7 @@ const Testimonials: FC = memo(() => {
               {testimonials.map((testimonial, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+                  <Testimonial isActive={isActive} key={`${testimonial.date}-${index}`} testimonial={testimonial} />
                 );
               })}
             </div>
@@ -114,7 +114,7 @@ const Testimonials: FC = memo(() => {
 });
 
 const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
-  ({testimonial: {text, name, image}, isActive}) => (
+  ({testimonial: {text, date, image}, isActive}) => (
     <div
       className={classNames(
         'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
@@ -129,8 +129,8 @@ const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
         <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
       )}
       <div className="flex flex-col gap-y-4">
-        <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
-        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">-- {name}</p>
+        <div className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">{text}</div>
+        <p className="prose prose-sm font-medium italic text-white sm:prose-base"> -- {date}</p>
       </div>
     </div>
   ),

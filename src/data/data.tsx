@@ -1,9 +1,7 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
+  SunIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -11,21 +9,8 @@ import {
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
+import hogwards from '../images/hogwards.png';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -33,8 +18,6 @@ import {
   ContactType,
   Hero,
   HomepageMeta,
-  PortfolioItem,
-  SkillGroup,
   Social,
   TestimonialSection,
   TimelineItem,
@@ -58,8 +41,10 @@ export const SectionId = {
   Portfolio: 'portfolio',
   Resume: 'resume',
   Skills: 'skills',
+  Education: 'education',
+  Publication: 'publication',
   Stats: 'stats',
-  Testimonials: 'testimonials',
+  News: 'news',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -68,19 +53,12 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  imageSrc: hogwards,
+  name: `I'm Yunjia Zheng.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        It is our choices, that show what we truly are.
       </p>
     </>
   ),
@@ -104,205 +82,90 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: (
+    <>
+      <p className="prose prose-invert prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+      I'm a first-year PhD student in School of Applied Science and Engineering, Harvard University, advised by Prof. 
+      <a href="https://junchengyang.com/" target="_blank" rel="noopener noreferrer"> Juncheng Yang </a>. 
+      I'm interested in database management systems and storage systems.
+      </p>
+      <p className="prose prose-invert prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+      Before joining Harvard, I was fortuate to work with Prof. <a href="https://www.cs.mcgill.ca/~kemme/" target="_blank" rel="noopener noreferrer">
+      Bettina Kemme</a>  and Prof. <a href="https://sites.google.com/view/oanabalmau" target="_blank" rel="noopener noreferrer">
+      Oana Balmau</a> at McGill University.
+      </p>
+    </>
+  ),
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: '150 Western Ave, Allston, MA, 02134', Icon: MapIcon},
+    {label: 'Study', text: 'Harvard University', Icon: AcademicCapIcon},
+    {label: 'Interests', text: 'Chinese Classical Dance, drama and theatre', Icon: SparklesIcon},
+    {label: 'Fun Fact', text: 'allergy to sunlight', Icon: SunIcon},
   ],
 };
 
-/**
- * Skills section
- */
-export const skills: SkillGroup[] = [
-  {
-    name: 'Spoken languages',
-    skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
-        level: 3,
-      },
-    ],
-  },
-  {
-    name: 'Frontend development',
-    skills: [
-      {
-        name: 'React',
-        level: 9,
-      },
-      {
-        name: 'Typescript',
-        level: 7,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
-      },
-    ],
-  },
-  {
-    name: 'Backend development',
-    skills: [
-      {
-        name: 'Node.js',
-        level: 8,
-      },
-      {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
-      },
-    ],
-  },
-];
 
-/**
- * Portfolio section
- */
-export const portfolioItems: PortfolioItem[] = [
-  {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage1,
-  },
-  {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage2,
-  },
-  {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
-  },
-  {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
-  },
-  {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
-  },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
-  },
-];
 
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'September 2023 - April 2025',
+    location: 'McGill University, Canada',
+    title: 'Masters In Computer Science',
+    content: <p> Thesis: View Management In Graph Databases.</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'September 2019 - April 2023',
+    location: 'McGill University, Canada',
+    title: 'Bachelor in Honors. Computer Science',
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
+    date: 'April 2025',
+    location: 'VLDB\'25',
+    title: 'G-View: View Management for Graph Databases',
+    authors:(
+      <>
+       <p><strong className="text-grey-300">Yunjia Zheng</strong>,Charlotte Sacré, Mohanna Shahrad, Owen Lipchitz, Yu Ting Gu, Bettina Kemme</p>
+      </>
+    ) 
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
+    date: 'April 2024',
+    location: 'ICDEW\'24',
+    title: 'Towards View Management in Graph Databases',
+    paperUrl:'https://ieeexplore.ieee.org/document/10555088/',
+    authors:(
+      <>
+       <p>Mohanna Shahrad,Yu Ting Gu,<strong className="text-grey-300">Yunjia Zheng</strong>, Bettina Kemme</p>
+      </>
+    ) 
+  },
+  {
+    date: 'November 2023',
+    location: 'AIDB@VLDB\'23',
+    title: 'DBMLSched: Scheduling In-database Machine Learning Jobs',
+    paperUrl:'https://ceur-ws.org/Vol-3462/AIDB3.pdf',
+    authors:(
+      <>
+       <p><strong className="text-grey-300">Yunjia Zheng</strong>,Yuxuan Tian, Joseph Vinish D’Silva, Bettina Kemme</p>
+      </>
+    ) 
+  },
+  {
+    date: 'July 2021',
+    location: 'NetSoft\'21',
+    title: 'Flow-based Service Type Identification using Deep Learning',
+    paperUrl:'https://ieeexplore.ieee.org/document/9492663/',
+    authors:(
+      <>
+       <p>Mona Elsaadawy, Petar Basta, <strong className="text-grey-300">Yunjia Zheng</strong>,Bettina Kemme, Mohamed Younis</p>
+      </>
+    ) 
   },
 ];
 
@@ -313,19 +176,12 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
-    },
-    {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
-    },
-    {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      date: 'April 10, 2025',
+      text: (
+        <>
+        <p>Our paper <strong className="text-grey-300"><a href="null" target="_blank" rel="noopener noreferrer"> View Management for Graph Databases </a></strong> has been accepted to VLDB 2025! #VLDB2025 #databases #research </p>
+        </>
+      )
     },
   ],
 };
@@ -340,23 +196,23 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'yunjia_zheng@g.harvard.edu',
+      href: 'mailto:yunjia_zheng@g.harvard.edu',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: '150 Western Ave, Allston, MA, 02134',
+      href: 'https://seas.harvard.edu/about-us/visit-us/allston/science-engineering-complex',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: '@SEVERINA_ZYJ',
+      href: 'https://www.instagram.com/severina_zyj/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'SeverinaZheng',
+      href: 'https://github.com//SeverinaZheng',
     },
   ],
 };
@@ -365,9 +221,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com//SeverinaZheng'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/yunjia-zheng-886a77182/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/severina_zyj/'},
 ];
