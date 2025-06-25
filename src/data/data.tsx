@@ -1,16 +1,16 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  SunIcon,
   MapIcon,
   SparklesIcon,
+  SunIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
+import hogwards from '../images/hogwards.png';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import profilepic from '../images/profilepic.jpg';
-import hogwards from '../images/hogwards.png';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
