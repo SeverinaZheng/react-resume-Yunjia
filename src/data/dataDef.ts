@@ -91,7 +91,7 @@ export interface TimelineItem {
   location: string;
   title: string;
   content?: JSX.Element;
-  paperUrl?: string; 
+  paperUrl?: string;
   authors?: JSX.Element;
 }
 

@@ -1,5 +1,6 @@
-import {FC, memo} from 'react';
 import {NewspaperIcon} from '@heroicons/react/24/outline';
+import {FC, memo} from 'react';
+
 import type {TimelineItem} from '../../../data/dataDef';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
@@ -7,9 +8,13 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
   return (
     <div className="flex flex-col pb-8 text-center last:pb-0 md:text-left">
       <div className="flex flex-col pb-4">
-        <h2 className="text-xl flex font-bold">{title}
-          {item.paperUrl && <a href={item.paperUrl} target="_blank" rel="noopener noreferrer" title="Download Paper">
-              <NewspaperIcon className="w-4 h-4 relative top-[8px]"/> </a>} 
+        <h2 className="text-xl flex font-bold">
+          {title}
+          {item.paperUrl && (
+            <a href={item.paperUrl} target="_blank" rel="noopener noreferrer" title="Download Paper">
+              <NewspaperIcon className="w-4 h-4 relative top-[8px]" />{' '}
+            </a>
+          )}
         </h2>
         <div className="flex items-center justify-center gap-x-2 md:justify-start">
           <span className="flex-1 text-sm font-medium italic sm:flex-none">{location}</span>

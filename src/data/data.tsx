@@ -1,15 +1,9 @@
-import {
-  AcademicCapIcon,
-  ArrowDownTrayIcon,
-  MapIcon,
-  SparklesIcon,
-  SunIcon,
-} from '@heroicons/react/24/outline';
+import {AcademicCapIcon, ArrowDownTrayIcon, MapIcon, SparklesIcon, SunIcon} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import hogwards from '../images/hogwards.png';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import hogwards from '../images/hogwards.png';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -85,14 +79,23 @@ export const aboutData: About = {
   description: (
     <>
       <p className="prose prose-invert prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-      I'm a first-year PhD student in School of Applied Science and Engineering, Harvard University, advised by Prof. 
-      <a href="https://junchengyang.com/" target="_blank" rel="noopener noreferrer"> Juncheng Yang </a>. 
-      I'm interested in database management systems and storage systems.
+        I'm a first-year PhD student in School of Applied Science and Engineering, Harvard University, advised by Prof.
+        <a href="https://junchengyang.com/" target="_blank" rel="noopener noreferrer">
+          {' '}
+          Juncheng Yang{' '}
+        </a>
+        . I'm interested in database management systems and storage systems.
       </p>
       <p className="prose prose-invert prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-      Before joining Harvard, I was fortuate to work with Prof. <a href="https://www.cs.mcgill.ca/~kemme/" target="_blank" rel="noopener noreferrer">
-      Bettina Kemme</a>  and Prof. <a href="https://sites.google.com/view/oanabalmau" target="_blank" rel="noopener noreferrer">
-      Oana Balmau</a> at McGill University.
+        Before joining Harvard, I was fortuate to work with Prof.{' '}
+        <a href="https://www.cs.mcgill.ca/~kemme/" target="_blank" rel="noopener noreferrer">
+          Bettina Kemme
+        </a>{' '}
+        and Prof.{' '}
+        <a href="https://sites.google.com/view/oanabalmau" target="_blank" rel="noopener noreferrer">
+          Oana Balmau
+        </a>{' '}
+        at McGill University.
       </p>
     </>
   ),
@@ -103,8 +106,6 @@ export const aboutData: About = {
     {label: 'Fun Fact', text: 'allergy to sunlight', Icon: SunIcon},
   ],
 };
-
-
 
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
@@ -126,46 +127,56 @@ export const education: TimelineItem[] = [
 export const experience: TimelineItem[] = [
   {
     date: 'April 2025',
-    location: 'VLDB\'25',
+    location: "VLDB'25",
     title: 'G-View: View Management for Graph Databases',
-    authors:(
+    authors: (
       <>
-       <p><strong className="text-grey-300">Yunjia Zheng</strong>,Charlotte Sacré, Mohanna Shahrad, Owen Lipchitz, Yu Ting Gu, Bettina Kemme</p>
+        <p>
+          <strong className="text-grey-300">Yunjia Zheng</strong>,Charlotte Sacré, Mohanna Shahrad, Owen Lipchitz, Yu
+          Ting Gu, Bettina Kemme
+        </p>
       </>
-    ) 
+    ),
   },
   {
     date: 'April 2024',
-    location: 'ICDEW\'24',
+    location: "ICDEW'24",
     title: 'Towards View Management in Graph Databases',
-    paperUrl:'https://ieeexplore.ieee.org/document/10555088/',
-    authors:(
+    paperUrl: 'https://ieeexplore.ieee.org/document/10555088/',
+    authors: (
       <>
-       <p>Mohanna Shahrad,Yu Ting Gu,<strong className="text-grey-300">Yunjia Zheng</strong>, Bettina Kemme</p>
+        <p>
+          Mohanna Shahrad,Yu Ting Gu,<strong className="text-grey-300">Yunjia Zheng</strong>, Bettina Kemme
+        </p>
       </>
-    ) 
+    ),
   },
   {
     date: 'November 2023',
-    location: 'AIDB@VLDB\'23',
+    location: "AIDB@VLDB'23",
     title: 'DBMLSched: Scheduling In-database Machine Learning Jobs',
-    paperUrl:'https://ceur-ws.org/Vol-3462/AIDB3.pdf',
-    authors:(
+    paperUrl: 'https://ceur-ws.org/Vol-3462/AIDB3.pdf',
+    authors: (
       <>
-       <p><strong className="text-grey-300">Yunjia Zheng</strong>,Yuxuan Tian, Joseph Vinish D’Silva, Bettina Kemme</p>
+        <p>
+          <strong className="text-grey-300">Yunjia Zheng</strong>,Yuxuan Tian, Joseph Vinish D’Silva, Bettina Kemme
+        </p>
       </>
-    ) 
+    ),
   },
   {
     date: 'July 2021',
-    location: 'NetSoft\'21',
+    location: "NetSoft'21",
     title: 'Flow-based Service Type Identification using Deep Learning',
-    paperUrl:'https://ieeexplore.ieee.org/document/9492663/',
-    authors:(
+    paperUrl: 'https://ieeexplore.ieee.org/document/9492663/',
+    authors: (
       <>
-       <p>Mona Elsaadawy, Petar Basta, <strong className="text-grey-300">Yunjia Zheng</strong>,Bettina Kemme, Mohamed Younis</p>
+        <p>
+          Mona Elsaadawy, Petar Basta, <strong className="text-grey-300">Yunjia Zheng</strong>,Bettina Kemme, Mohamed
+          Younis
+        </p>
       </>
-    ) 
+    ),
   },
 ];
 
@@ -179,9 +190,18 @@ export const testimonial: TestimonialSection = {
       date: 'April 10, 2025',
       text: (
         <>
-        <p>Our paper <strong className="text-grey-300"><a href="null" target="_blank" rel="noopener noreferrer"> View Management for Graph Databases </a></strong> has been accepted to VLDB 2025! #VLDB2025 #databases #research </p>
+          <p>
+            Our paper{' '}
+            <strong className="text-grey-300">
+              <a href="null" target="_blank" rel="noopener noreferrer">
+                {' '}
+                View Management for Graph Databases{' '}
+              </a>
+            </strong>{' '}
+            has been accepted to VLDB 2025! #VLDB2025 #databases #research{' '}
+          </p>
         </>
-      )
+      ),
     },
   ],
 };
