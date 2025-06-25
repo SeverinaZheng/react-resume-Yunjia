@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {TimelineItem} from '../../../data/dataDef';
+import type {TimelineItem} from '../../../data/dataDef';
 import {NewspaperIcon} from '@heroicons/react/24/outline';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
