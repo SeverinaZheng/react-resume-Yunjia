@@ -10,7 +10,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
       <div className="flex flex-col pb-4">
         <h2 className="text-xl flex font-bold">{title}
           {item.paperUrl && <a href={item.paperUrl} target="_blank" rel="noopener noreferrer" title="Download Paper">
-              <NewspaperIcon className="w-4 h-4 relative top-[8px]" style={{ marginLeft: 8 }} /> </a>} 
+              <NewspaperIcon className="w-4 h-4 relative top-[8px]"/> </a>} 
         </h2>
         <div className="flex items-center justify-center gap-x-2 md:justify-start">
           <span className="flex-1 text-sm font-medium italic sm:flex-none">{location}</span>
