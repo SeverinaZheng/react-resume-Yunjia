@@ -35,9 +35,29 @@ const ContactForm: FC = memo(() => {
       /**
        * This is a good starting point to wire up your form submission logic
        * */
-      console.log('Data to send: ', data);
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+          const error = await response.json();
+          console.error('Error sending email:', error);
+          alert('Failed to send message.');
+          return;
+        }
+
+        alert('Message sent successfully!');
+        setData(defaultData); 
+        console.log('Data to send: ', data);
+      } catch (err) {
+        console.error('Unexpected error:', err);
+        alert('Something went wrong.');
+      }
     },
-    [data],
+    [data,defaultData],
   );
 
   const inputClasses =
