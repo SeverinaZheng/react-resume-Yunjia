@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     await transporter.sendMail({
-      from: `"Contact Form" <${process.env.EMAIL_USER}>`,
+      from: `"Contact Form" <zyj7337@126.com>`,
       to: 'yunjia.zheng@mail.mcgill.ca', // Your receiving email
       subject: `New message from ${name}`,
       text: "test",
@@ -48,12 +48,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     return res.status(200).json({message: 'Message sent successfully'});
-  } catch (error:unknown) {
-    if (error instanceof Error) {
-      console.error('Error:', error.message);
-    } else {
-      console.error('Unexpected error:', error);
-    }
+  } catch (error) {
+    console.error('Unexpected error:', error);
+    
     return res.status(500).json({error: 'Email send failed'});
   }
 }
