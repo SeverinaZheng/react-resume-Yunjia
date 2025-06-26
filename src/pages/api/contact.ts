@@ -29,32 +29,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const {name, email, message} = req.body;
   console.log("email:", email);
-  return res.status(500).json({email});
+  return res.status(500).json({name,email,message});
 
-  if (!name || !email || !message) {
-    return res.status(400).json({error: 'Missing required fields'});
-  }
+  // if (!name || !email || !message) {
+  //   return res.status(400).json({error: 'Missing required fields'});
+  // }
 
-  try {
-    await transporter.sendMail({
-      from: `"Contact Form" <${process.env.EMAIL_USER}>`,
-      to: 'yunjia.zheng@mail.mcgill.ca', // Your receiving email
-      subject: `New message from ${name}`,
-      html: `
-        <h2>Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `,
-    });
+  // try {
+  //   await transporter.sendMail({
+  //     from: `"Contact Form" <${process.env.EMAIL_USER}>`,
+  //     to: 'yunjia.zheng@mail.mcgill.ca', // Your receiving email
+  //     subject: `New message from ${name}`,
+  //     html: `
+  //       <h2>Contact Form Submission</h2>
+  //       <p><strong>Name:</strong> ${name}</p>
+  //       <p><strong>Email:</strong> ${email}</p>
+  //       <p><strong>Message:</strong><br/>${message}</p>
+  //     `,
+  //   });
 
-    return res.status(200).json({message: 'Message sent successfully'});
-  } catch (error:unknown) {
-    if (error instanceof Error) {
-      console.error('Error:', error.message);
-    } else {
-      console.error('Unexpected error:', error);
-    }
-    return res.status(500).json({error: 'Email send failed'});
-  }
+  //   return res.status(200).json({message: 'Message sent successfully'});
+  // } catch (error:unknown) {
+  //   if (error instanceof Error) {
+  //     console.error('Error:', error.message);
+  //   } else {
+  //     console.error('Unexpected error:', error);
+  //   }
+  //   return res.status(500).json({error: 'Email send failed'});
+  // }
 }
