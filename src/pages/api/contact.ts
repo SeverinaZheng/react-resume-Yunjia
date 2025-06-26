@@ -33,24 +33,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({error: 'Missing required fields'});
   }
 
-  try {
-    await transporter.sendMail({
-      from: `"Contact Form" <zyj7337@126.com>`,
-      to: 'yunjia.zheng@mail.mcgill.ca', // Your receiving email
-      subject: `New message from ${name}`,
-      text: "test",
-      // html: `
-      //   <h2>Contact Form Submission</h2>
-      //   <p><strong>Name:</strong> ${name}</p>
-      //   <p><strong>Email:</strong> ${email}</p>
-      //   <p><strong>Message:</strong><br/>${message}</p>
-      // `,
-    });
+  (async () => {
+    try {
+      await transporter.sendMail({
+        from: `"Contact Form" <zyj7337@126.com>`,
+        to: 'yunjia.zheng@mail.mcgill.ca', // Your receiving email
+        subject: `New message from ${name}`,
+        text: "test",
+        // html: `
+        //   <h2>Contact Form Submission</h2>
+        //   <p><strong>Name:</strong> ${name}</p>
+        //   <p><strong>Email:</strong> ${email}</p>
+        //   <p><strong>Message:</strong><br/>${message}</p>
+        // `,
+      });
 
-    return res.status(200).json({message: 'Message sent successfully'});
-  } catch (error) {
-    console.error('Unexpected error:', error);
-    
-    return res.status(500).json({error: 'Email send failed'});
-  }
+      return res.status(200).json({message: 'Message sent successfully'});
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      
+      return res.status(500).json({error: 'Email send failed'});
+    }
+  })();
 }
