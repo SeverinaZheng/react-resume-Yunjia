@@ -36,14 +36,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     await transporter.sendMail({
       from: `"Contact Form" <${process.env.EMAIL_USER}>`,
-      to: 'yunjia.zheng@mail.mcgill.ca', // Your receiving email
+      to: 'zyj7337@126.com', // Your receiving email
       subject: `New message from ${name}`,
-      html: `
-        <h2>Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `,
+      text: "test",
+      // html: `
+      //   <h2>Contact Form Submission</h2>
+      //   <p><strong>Name:</strong> ${name}</p>
+      //   <p><strong>Email:</strong> ${email}</p>
+      //   <p><strong>Message:</strong><br/>${message}</p>
+      // `,
     });
 
     return res.status(200).json({message: 'Message sent successfully'});
