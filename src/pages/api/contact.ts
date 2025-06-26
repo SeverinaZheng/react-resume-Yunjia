@@ -16,10 +16,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   transporter.verify((error, _) => {
     if (error) {
       console.error('SMTP connection failed:', error);
-      return res.status(500).json({error: 'Email verification failed'});
+      //return res.status(500).json({error: 'Email verification failed'});
     } else {
       console.log('SMTP is ready to send emails');
-      return res.status(500).json({error: 'Email verification succeed'});
+      //return res.status(500).json({error: 'Email verification succeed'});
     }
   });
 
