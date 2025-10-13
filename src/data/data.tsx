@@ -103,7 +103,7 @@ export const aboutData: About = {
     {label: 'Location', text: '150 Western Ave, Allston, MA, 02134', Icon: MapIcon},
     {label: 'Study', text: 'Harvard University', Icon: AcademicCapIcon},
     {label: 'Interests', text: 'Chinese Classical Dance, drama and theatre', Icon: SparklesIcon},
-    {label: 'Fun Fact', text: 'allergy to sunlight', Icon: SunIcon},
+    {label: 'Fun Fact', text: 'photosensitive to sunlight', Icon: SunIcon},
   ],
 };
 
