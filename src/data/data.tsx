@@ -111,16 +111,21 @@ export const aboutData: About = {
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
+   {
+    date: 'September 2025 - Present',
+    location: 'Harvard University, USA',
+    title: 'PhD student in Computer Science',
+  },
   {
     date: 'September 2023 - April 2025',
     location: 'McGill University, Canada',
-    title: 'Masters In Computer Science',
+    title: 'Master of Science in Computer Science',
     content: <p> Thesis: View Management In Graph Databases.</p>,
   },
   {
     date: 'September 2019 - April 2023',
     location: 'McGill University, Canada',
-    title: 'Bachelor in Honors. Computer Science',
+    title: 'Bachelor of Science in Honors. Computer Science',
   },
 ];
 
